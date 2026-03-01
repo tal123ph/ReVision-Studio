@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Agents | Decart Video Restyler</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --text: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.5);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.2s;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: #0f172a;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .video-container {
+            margin-top: 2.5rem;
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 1rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .placeholder-text {
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Decart Restyle</h1>
+        
+        <div class="input-group">
+            <label for="youtube-url">YouTube Video URL</label>
+            <input type="text" id="youtube-url" placeholder="https://www.youtube.com/watch?v=...">
+        </div>
+
+        <div class="input-group">
+            <label for="style-select">Choose a Style</label>
+            <select id="style-select">
+                <option value="cyberpunk aesthetic, neon lights, high contrast">Cyberpunk</option>
+                <option value="animated style, studio ghibli, whimsical">Studio Ghibli</option>
+                <option value="van gogh style, oil painting, impressionism">Van Gogh</option>
+                <option value="gta style, comic book shading, vibrant">GTA Style</option>
+                <option value="sketch drawing, charcoal pencil, monochrome">Pencil Sketch</option>
+            </select>
+        </div>
+
+        <button id="restyle-btn">Generate Restyled Video</button>
+
+        <div class="video-container" id="video-display">
+            <div class="placeholder-text">Video stream will appear here...</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('restyle-btn').onclick = async () => {
+            const url = document.getElementById('youtube-url').value;
+            const style = document.getElementById('style-select').value;
+            
+            if (!url) {
+                alert("Please enter a YouTube URL");
+                return;
+            }
+
+            // In a real implementation, this would call a backend endpoint
+            // that triggers the python scripts we created.
+            alert(`Restyling process started for: ${url}\nStyle: ${style}`);
+            
+            // Mocking the video stream display
+            document.getElementById('video-display').innerHTML = `
+                <div style="text-align:center;">
+                    <p>Connecting to Vision Agent...</p>
+                    <p style="font-size: 0.8rem; color: #38bdf8;">Applying ${style}...</p>
+                </div>
+            `;
+        };
+    </script>
+</body>
+</html>

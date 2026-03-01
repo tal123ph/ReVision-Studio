@@ -1,0 +1,14 @@
+[project]
+name = "vision"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "python-dotenv>=1.2.1",
+    "vision-agents[decart,deepgram,elevenlabs,gemini,getstream]>=0.3.8",
+    "supadata>=1.6.0",
+    "yt-dlp>=2024.1.1",
+    "aiofiles>=23.0.0",
+]
+
