@@ -146,3 +146,16 @@ uv venv
 source .venv/bin/activate
 uv pip install -r requirements.txt
 
+
+
+---
+
+## 📬 Author
+
+**Muhammad Talha**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/muhammad-talha12b/)
+
+---
+
+
